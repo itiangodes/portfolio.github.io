@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Christian Jeed Godes | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <button onclick="toggleDarkMode()" id="modeToggle" class="settings-btn" title="Toggle Dark Mode">💡</button>
+</head>
+<body>
+  <header>
+    <h1>Christian Jeed Godes</h1>
+    <p>Front-End Developer</p>
+  </header>
+
+  <div class="profile-pic">
+    <img src="christian.jpg" alt="christian">
+  </div>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>I’m a self-taught front-end developer who loves building visually appealing, responsive websites. I specialize in HTML, CSS, JavaScript, and creating user-friendly layouts.</p>
+  </section>
+
+  <section class="portfolio">
+    <h2>Recent Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Interactive Portfolio</h3>
+        <p>A fully responsive personal portfolio with animations and scroll effects.</p>
+      </div>
+      <div class="project-card">
+        <h3>Coffee Shop System UI</h3>
+        <p>Designed and built the front-end of a coffee shop system using Bootstrap.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects">
+    <h2>My Personal Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="github.jpg" alt="Project 1 Screenshot" />
+        <h3>Personal Portfolio Website</h3>
+        <p>A simple personal portfolio website where I use HTML, CSS, and JavaScript.</p>
+        <a href="https://github.com/itiangodes/itiangodes.github.io.git" class="btn" target="_blank">GitHub Repo</a>
+      </div>
+      <div class="project-card">
+        <img src="github.jpg" alt="Project 2 Screenshot" />
+        <h3>WKND Coffee Shop</h3>
+        <p>WKND is your cozy coffee spot for quality, calm, and community. Dine-in only. Great coffee, good vibes.</p>
+        <a href="https://github.com/itiangodes/wknd.github.io.git" class="btn" target="_blank">GitHub Repo</a>
+      </div>
+      <div class="project-card">
+        <img src="github.jpg" alt="Project 3 Screenshot" />
+        <h3>Python</h3>
+        <p>A simple created code of python where it can count the number of coins in a specific value.</p>
+        <a href="https://github.com/itiangodes/Python.git" class="btn" target="_blank">GitHub Repo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔥 GitHub Activity Section -->
+  <section class="github-activity">
+  <h2>GitHub Activity</h2>
+  <div id="repo-list" class="repo-grid">
+    <!-- Repositories will be inserted here -->
+  </div>
+</section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <div class="contact-item">
+      <span class="contact-label">📧 Email:</span>
+      <a href="mailto:christiangodes27@gmail.com">christiangodes27@gmail.com</a>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">📘 Facebook:</span>
+      <a href="https://www.facebook.com/share/1BXPX2faq5/" target="_blank">Christian Godes</a>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">📷 Instagram:</span>
+      <a href="https://www.instagram.com/itiangodes?igsh=c2w2YmdkN2l3amJ3" target="_blank">@itiangodes</a>
+    </div>
+    <a href="index.html" class="btn">← Back to Home</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Christian Jeed Godes</p>
+  </footer>
+
+  <script>
+    // Dark Mode Toggle
+    window.onload = function () {
+      const isDarkMode = localStorage.getItem("darkMode");
+      const body = document.body;
+      const btn = document.getElementById("modeToggle");
+
+      if (isDarkMode === "enabled") {
+        body.classList.add("dark");
+        btn.textContent = "💤";
+        btn.title = "Dark Mode (Click to switch to Light)";
+      } else {
+        body.classList.remove("dark");
+        btn.textContent = "💡";
+        btn.title = "Light Mode (Click to switch to Dark)";
+      }
+    };
+
+    function toggleDarkMode() {
+      const body = document.body;
+      const btn = document.getElementById("modeToggle");
+
+      if (body.classList.contains("dark")) {
+        body.classList.remove("dark");
+        localStorage.setItem("darkMode", "disabled");
+        btn.textContent = "💡";
+        btn.title = "Light Mode (Click to switch to Dark)";
+      } else {
+        body.classList.add("dark");
+        localStorage.setItem("darkMode", "enabled");
+        btn.textContent = "💤";
+        btn.title = "Dark Mode (Click to switch to Light)";
+      }
+    }
+
+    // GitHub Activity Fetch
+    fetch("https://api.github.com/users/itiangodes/repos?sort=updated")
+      .then(res => res.json())
+      .then(data => {
+        const repoList = document.getElementById("repo-list");
+        const top5 = data.slice(0, 5);
+        top5.forEach(repo => {
+          const div = document.createElement("div");
+          div.className = "repo-card";
+          div.innerHTML = `
+            <h3>${repo.name}</h3>
+            <p>${repo.description || "No description provided."}</p>
+            <p><strong>Last Updated:</strong> ${new Date(repo.updated_at).toLocaleDateString()}</p>
+            <a href="${repo.html_url}" target="_blank">View Repo →</a>
+          `;
+          repoList.appendChild(div);
+        });
+      })
+      .catch(err => {
+        document.getElementById("repo-list").innerHTML = "<p>Error loading GitHub activity.</p>";
+        console.error("GitHub API Error:", err);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+body {
+  font-family: sans-serif;
+  background-image: url('background.jpg.jpg'); /* make sure filename is correct */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-small {
+  background-color: #3e2723;
+  font-size: 14px;
+}
+
+.footer-small a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.footer-small a:hover {
+  text-decoration: underline;
+}
+
+.footer-small h5 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-small ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer-small li {
+  margin-bottom: 4px;
+}
+
+.footer-small p {
+  line-height: 1.5;
+}
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+    .quantity-buttons button {
+      padding: 4px 8px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+
+.navbar {
+  background-color: #3e2723 !important;
+}
+
+.btn-dark {
+  background-color: #3e2723;
+  border: none;
+}
+
+.btn-dark:hover {
+  background-color: #5d4037;
+}
+
+.hero-section {
+  height: 60vh;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+}
+
+.card-title {
+  color: #3e2723;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  text-align: center; /* Center the contents horizontally */
+}
+
+#sidebar .nav-btn {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.drink-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px; /* spacing between buttons */
+}
+
+.drink-categories .nav-btn {
+  min-width: 120px;
+  padding: 10px 15px;
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.nav-btn.active {
+  background-color: #ffc107;
+  color: #000;
+}
+
+#cart-list li {
+  font-size: 16px;
+}
+
+#dineInForm .card {
+  max-width: 600px;
+  margin: auto;
+}
+
+.row.g-4 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Floating Cart for Desktop */
+.floating-cart {
+  position: fixed;
+  bottom: 20px;   
+  right: 20px;    
+  width: 320px;
+  max-height: 80vh; 
+  overflow-y: auto; 
+  z-index: 1050;
+}
+
+/* Style adjustments for the cart card */
+.floating-cart .card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  background-color: #fff;
+  color: #000;
+}
+
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .floating-cart {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+    padding: 10px;
+  }
+
+  .floating-cart .card {
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+  }
+
+  /* Optional: Make cart collapsible on mobile to save space */
+  .floating-cart .card-body {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+}
+
+.floating-cart .card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+h2 {
+  color: #333;
+}
+
+canvas {
+  background: white;
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+@media (max-width: 576px) {
+    #cart-list .list-group-item {
+      font-size: 0.85rem;
+      padding: 8px;
+    }
+
+    #cart-list input[type="number"] {
+      width: 45px !important;
+      font-size: 0.85rem;
+    }
+
+    #cart-list strong {
+      font-size: 0.9rem;
+    }
+
+    #cart-list button.btn-danger {
+      padding: 2px 6px;
+      font-size: 0.8rem;
+    }
+  }
+

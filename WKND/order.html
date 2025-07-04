@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WKND - Dine-In Order</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5 CDN -->
+  <link href="js/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light text-dark">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+    <a class="navbar-brand fw-bold text-white" href="#">WKND</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="btn btn-outline-light ms-2" href="order.html">Order</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="app" role="application" aria-label="WKND Menu" class="drink-categories text-center my-4">
+    <button type="button" data-category="all" class="nav-btn active" aria-current="page">All</button>
+    <button type="button" data-category="coffee" class="nav-btn">Coffee</button>
+    <button type="button" data-category="noncoffee" class="nav-btn">Non-Coffee</button>
+    <button type="button" data-category="tea" class="nav-btn">Tea</button>
+    <button type="button" data-category="milktea" class="nav-btn">Milk Tea</button>
+    <button type="button" data-category="fruittea" class="nav-btn">Fruit Tea</button>
+    <button type="button" data-category="specials" class="nav-btn">Specials</button>
+    <button type="button" data-category="creations" class="nav-btn">Creations</button>
+  </div>
+
+<!--Menu-->
+<div class="container my-5" data-category="coffee">
+  <h2 style="color: #f4f2f2; text-align: center;">COFFEE</h2>
+    <h2 class="text-center mb-4"></h2>
+    <div class="row g-4">
+      <div class="col-6 col-sm-4 col-md-3">
+          <div class="card">
+            <img src="kape1.jpg" class="card-img-top" alt="Americano">
+              <div class="card-body text-center">
+              <h5 class="card-title">Americano</h5>
+            <p class="card-text">Rich and creamy favorite.</p>
+
+                <select class="form-select mb-2" id="americano-ounce">
+                  <option value="16oz-89">Medium - ₱89</option>
+                  <option value="22oz-109">Large - ₱109</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Americano','americano-ounce')">Add to Cart</button>
+
+              </div>
+          </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape2.jpg" class="card-img-top" alt="Capuccino">
+          <div class="card-body text-center">
+            <h5 class="card-title">Capuccino</h5>
+            <p class="card-text">Purple yam Godness in a Cup.</p>
+
+            <select class="form-select mb-2" id="capuccino-ounce">
+                  <option value="16oz-89">Medium - ₱89</option>
+                  <option value="22oz-109">Large - ₱109</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Capuccino','capuccino-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape3.jpg" class="card-img-top" alt="Latte">
+          <div class="card-body text-center">
+            <h5 class="card-title">Latte</h5>
+            <p class="card-text">Creamy and Chocolate Taste in Every Sip</p>
+            <select class="form-select mb-2" id="latte-ounce">
+                  <option value="16oz-89">Medium - ₱89</option>
+                  <option value="22oz-109">Large - ₱109</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Latte','latte-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape8.jpg" class="card-img-top" alt="Butterscotch">
+          <div class="card-body text-center">
+            <h5 class="card-title">Butterscotch</h5>
+            <p class="card-text">Creamy and bold.</p>
+                <select class="form-select mb-2" id="butterscotch-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Butterscotch','butterscotch-ounce')">Add to Cart</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape4.jpg.jpg" class="card-img-top" alt="French Vanilla">
+          <div class="card-body text-center">
+            <h5 class="card-title">French Vanilla</h5>
+            <p class="card-text">Creamy and bold with a Pumpkin Spice finish.</p>
+            <select class="form-select mb-2" id="french-vanilla-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('French Vanilla','french-vanilla-ounce')">Add to Cart</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape5.jpg.jpg" class="card-img-top" alt="Hazelnut">
+          <div class="card-body text-center">
+            <h5 class="card-title">Hazelnut</h5>
+            <p class="card-text">Smooth milk over Cookies.</p>
+            <select class="form-select mb-2" id="hazelnut-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Hazelnut','hazelnut-ounce')">Add to Cart</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape6.jpg.jpg" class="card-img-top" alt="Irish Cream">
+          <div class="card-body text-center">
+            <h5 class="card-title">Irish Cream</h5>
+            <p class="card-text">Sweetness and bold in a tiny cup.</p>
+
+            <select class="form-select mb-2" id="irish-cream-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Irish Cream','irish-cream-ounce')">Add to Cart</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape7.jpg.jpg" class="card-img-top" alt="Salted Caramel">
+          <div class="card-body text-center">
+            <h5 class="card-title">Salted Caramel</h5>
+            <p class="card-text">Cold and energizing with a hint of sweet.</p>
+            
+            <select class="form-select mb-2" id="salted-caramel-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Salted Caramel','salted-caramel-ounce')">Add to Cart</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape7.jpg.jpg" class="card-img-top" alt="Toffee Nut">
+          <div class="card-body text-center">
+            <h5 class="card-title">Toffee Nut</h5>
+            <p class="card-text">Cold and energizing with a hint of sweet.</p>
+            
+            <select class="form-select mb-2" id="toffee-nut-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Toffee Nut','toffee-nut-ounce')">Add to Cart</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape7.jpg.jpg" class="card-img-top" alt="Cold Brew Latte">
+          <div class="card-body text-center">
+            <h5 class="card-title">Cold Brew Latte</h5>
+            <p class="card-text">Cold and energizing with a hint of sweet.</p>
+
+            <select class="form-select mb-2" id="cold-brew-latte-ounce">
+                  <option value="16oz-129">Medium - ₱129</option>
+                  <option value="22oz-149">Large - ₱149</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Cold Brew Latte','cold-brew-latte-ounce')">Add to Cart</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="container my-5" data-category="noncoffee">
+  <h2 style="color: #f4f2f2; text-align: center;">NON COFFEE</h2>
+    <h2 class="text-center mb-4"></h2>
+    <div class="row g-4">
+      <div class="col-6 col-sm-4 col-md-3">
+          <div class="card">
+            <img src="kape1.jpg" class="card-img-top" alt="Matcha">
+              <div class="card-body text-center">
+              <h5 class="card-title">Matcha</h5>
+            <p class="card-text">Rich and creamy favorite.</p>
+            
+                <select class="form-select mb-2" id="matcha-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Matcha','matcha-ounce')">Add to Cart</button>
+
+              </div>
+          </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape2.jpg" class="card-img-top" alt="Signature Chocolate">
+          <div class="card-body text-center">
+            <h5 class="card-title">Signature Chocolate</h5>
+            <p class="card-text">Purple yam Godness in a Cup.</p>
+
+                <select class="form-select mb-2" id="signature-chocolate-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Signature Chocolate','signature-chocolate-ounce')">Add to Cart</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape3.jpg" class="card-img-top" alt="Pink Drink">
+          <div class="card-body text-center">
+            <h5 class="card-title">Pink Drink</h5>
+            <p class="card-text">Pink Drink</p>
+
+                <select class="form-select mb-2" id="pink-drink-ounce">
+                  <option value="16oz-129">Medium - ₱129</option>
+                  <option value="22oz-149">Large - ₱149</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Pink Drink','pink-drink-ounce')">Add to Cart</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape8.jpg" class="card-img-top" alt="Pink Matcha">
+          <div class="card-body text-center">
+            <h5 class="card-title">Pink Matcha</h5>
+            <p class="card-text">Creamy and bold.</p>
+            <select class="form-select mb-2" id="pink-matcha-ounce">
+                  <option value="16oz-139">Medium - ₱139</option>
+                  <option value="22oz-159">Large - ₱159</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Pink Matcha','pink-matcha-ounce')">Add to Cart</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape4.jpg.jpg" class="card-img-top" alt="Pink Tsokolate">
+          <div class="card-body text-center">
+            <h5 class="card-title">Pink Tsokolate</h5>
+            <p class="card-text">Creamy and bold with a Pumpkin Spice finish.</p>
+            <select class="form-select mb-2" id="pink-tsokolate-ounce">
+                  <option value="16oz-149">Medium - ₱149</option>
+                  <option value="22oz-169">Large - ₱169</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Pink Tsokolate','pink-tsokolate-ounce')">Add to Cart</button>
+
+          </div>
+        </div>
+      </div>      
+    </div>
+</div>
+
+<div class="container my-5" data-category="tea">
+  <h2 style="color: #f4f2f2; text-align: center;">TEA</h2>
+    <h2 class="text-center mb-4"></h2>
+    <div class="row g-4">
+      <div class="col-6 col-sm-4 col-md-3">
+          <div class="card">
+            <img src="kape1.jpg" class="card-img-top" alt="Chamomile">
+              <div class="card-body text-center">
+              <h5 class="card-title">Chamomile</h5>
+            <p class="card-text">Rich and creamy favorite.</p>
+            <select class="form-select mb-2" id="chamomile-ounce">
+                  <option value="16oz-89">Medium - ₱89</option>
+                  <option value="22oz-109">Large - ₱109</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Chamomile','chamomile-ounce')">Add to Cart</button>
+
+              </div>
+          </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape2.jpg" class="card-img-top" alt="English Breakfast">
+          <div class="card-body text-center">
+            <h5 class="card-title">English Breakfast</h5>
+            <p class="card-text">Purple yam Godness in a Cup.</p>
+            
+          <select class="form-select mb-2" id="english-breakfast-ounce">
+                  <option value="16oz-89">Medium - ₱89</option>
+                  <option value="22oz-109">Large - ₱109</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('English Breakfast','english-breakfast-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape3.jpg" class="card-img-top" alt="Earl Grey Tea">
+          <div class="card-body text-center">
+            <h5 class="card-title">Earl Grey Tea</h5>
+            <p class="card-text">Pink Drink</p>
+            <select class="form-select mb-2" id="earl-grey-tea-ounce">
+                  <option value="16oz-89">Medium - ₱89</option>
+                  <option value="22oz-109">Large - ₱109</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Earl Grey Tea','earl-grey-tea-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape8.jpg" class="card-img-top" alt="Hibiscus Tea">
+          <div class="card-body text-center">
+            <h5 class="card-title">Hibiscus Tea</h5>
+            <p class="card-text">Creamy and bold.</p>
+            <select class="form-select mb-2" id="hibiscus-tea-ounce">
+                  <option value="16oz-89">Medium - ₱89</option>
+                  <option value="22oz-109">Large - ₱109</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Hibiscus Tea','hibiscus-tea-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape4.jpg.jpg" class="card-img-top" alt="Green Tea">
+          <div class="card-body text-center">
+            <h5 class="card-title">Green Tea</h5>
+            <p class="card-text">Creamy and bold with a Pumpkin Spice finish.</p>
+            
+            <select class="form-select mb-2" id="green-tea-ounce">
+                  <option value="16oz-89">Medium - ₱89</option>
+                  <option value="22oz-109">Large - ₱109</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Green Tea','green-tea-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape4.jpg.jpg" class="card-img-top" alt="Thai Tea">
+          <div class="card-body text-center">
+            <h5 class="card-title">Thai Tea</h5>
+            <p class="card-text">Creamy and bold with a Pumpkin Spice finish.</p>
+            <select class="form-select mb-2" id="thai-tea-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Thai Tea','thai-tea-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>      
+    </div>
+</div>
+
+<div class="container my-5" data-category="milktea">`
+  <h2 style="color: #f4f2f2; text-align: center;">MILK TEA</h2>
+    <h2 class="text-center mb-4"></h2>
+    <div class="row g-4">
+      <div class="col-6 col-sm-4 col-md-3">
+          <div class="card">
+            <img src="kape1.jpg" class="card-img-top" alt="Thai Milk Tea">
+              <div class="card-body text-center">
+              <h5 class="card-title">Thai Milk Tea</h5>
+            <p class="card-text">Rich and creamy favorite.</p>
+            
+            <select class="form-select mb-2" id="thai-milk-tea-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Thai Milk Tea','thai-milk-tea-ounce')">Add to Cart</button>
+              </div>
+          </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape2.jpg" class="card-img-top" alt="Okinawa">
+          <div class="card-body text-center">
+            <h5 class="card-title">Okinawa</h5>
+            <p class="card-text">Purple yam Godness in a Cup.</p>
+          <select class="form-select mb-2" id="okinawa-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Okinawa','okinawa-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape3.jpg" class="card-img-top" alt="Taro">
+          <div class="card-body text-center">
+            <h5 class="card-title">Taro</h5>
+            <p class="card-text">Pink Drink</p>
+            <select class="form-select mb-2" id="taro-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Taro','taro-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape8.jpg" class="card-img-top" alt="Matcha">
+          <div class="card-body text-center">
+            <h5 class="card-title">Matcha</h5>
+            <p class="card-text">Creamy and bold.</p>
+            <select class="form-select mb-2" id="matcha-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Matcha','matcha-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape4.jpg.jpg" class="card-img-top" alt="Wintermelon">
+          <div class="card-body text-center">
+            <h5 class="card-title">Wintermelon</h5>
+            <p class="card-text">Creamy and bold with a Pumpkin Spice finish.</p>
+            <select class="form-select mb-2" id="wintermelon-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Wintermelon','wintermelon-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape4.jpg.jpg" class="card-img-top" alt="Hokaido">
+          <div class="card-body text-center">
+            <h5 class="card-title">Hokaido</h5>
+            <p class="card-text">Creamy and bold with a Pumpkin Spice finish.</p>
+            <select class="form-select mb-2" id="hokaido-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Hokaido','hokaido-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>      
+    </div>
+</div>
+
+<div class="container my-5" data-category="fruittea">
+  <h2 style="color: #f4f2f2; text-align: center;">FRUIT TEA</h2>
+    <h2 class="text-center mb-4"></h2>
+    <div class="row g-4">
+      <div class="col-6 col-sm-4 col-md-3">
+          <div class="card">
+            <img src="kape1.jpg" class="card-img-top" alt="Strawberry Tea">
+              <div class="card-body text-center">
+              <h5 class="card-title">Strawberry Tea</h5>
+            <p class="card-text">Rich and creamy favorite.</p>
+            <select class="form-select mb-2" id="strawberry-tea-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Strawberry Tea','strawberry-tea-ounce')">Add to Cart</button>
+              </div>
+          </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape2.jpg" class="card-img-top" alt="Blueberry Tea">
+          <div class="card-body text-center">
+            <h5 class="card-title">Blueberry Tea</h5>
+            <p class="card-text">Purple yam Godness in a Cup.</p>
+          <select class="form-select mb-2" id="blueberry-tea-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Blueberry Tea','blueberry-tea-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape3.jpg" class="card-img-top" alt="Lychee">
+          <div class="card-body text-center">
+            <h5 class="card-title">Lychee</h5>
+            <p class="card-text">Pink Drink</p>
+            <select class="form-select mb-2" id="lychee-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Lychee','lychee-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape8.jpg" class="card-img-top" alt="Honey Peach">
+          <div class="card-body text-center">
+            <h5 class="card-title">Honey Peach</h5>
+            <p class="card-text">Creamy and bold.</p>
+            <select class="form-select mb-2" id="honey-peach-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Honey Peach','honey-peach-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape4.jpg.jpg" class="card-img-top" alt="Passion Fruit">
+          <div class="card-body text-center">
+            <h5 class="card-title">Passion Fruit</h5>
+            <p class="card-text">Creamy and bold with a Pumpkin Spice finish.</p>
+            <select class="form-select mb-2" id="passion-fruit-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Passion Fruit','passion-fruit-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape4.jpg.jpg" class="card-img-top" alt="Kiwi Tea">
+          <div class="card-body text-center">
+            <h5 class="card-title">Kiwi Tea</h5>
+            <p class="card-text">Creamy and bold with a Pumpkin Spice finish.</p>
+            <select class="form-select mb-2" id="kiwi-tea-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Kiwi Tea','kiwi-tea-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape4.jpg.jpg" class="card-img-top" alt="Mixed Berries Tea">
+          <div class="card-body text-center">
+            <h5 class="card-title">Mixed Berries Tea</h5>
+            <p class="card-text">Creamy and bold with a Pumpkin Spice finish.</p>
+            <select class="form-select mb-2" id="mixed-berries-tea-ounce">
+                  <option value="16oz-129">Medium - ₱129</option>
+                  <option value="22oz-149">Large - ₱149</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Mixed Berries Tea','mixed-berries-tea-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>         
+    </div>
+</div>
+
+<div class="container my-5" data-category="specials">
+  <h2 style="color: #f4f2f2; text-align: center;">SPECIALS</h2>
+    <h2 class="text-center mb-4"></h2>
+    <div class="row g-4">
+      <div class="col-6 col-sm-4 col-md-3">
+          <div class="card">
+            <img src="kape1.jpg" class="card-img-top" alt="Caramel Machiato">
+              <div class="card-body text-center">
+              <h5 class="card-title">Caramel Machiato</h5>
+            <p class="card-text">Rich and creamy favorite.</p>
+            <select class="form-select mb-2" id="caramel-machiato-ounce">
+                  <option value="16oz-129">Medium - ₱129</option>
+                  <option value="22oz-149">Large - ₱149</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Caramel Machiato','caramel-machiato-ounce')">Add to Cart</button>
+              </div>
+          </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape2.jpg" class="card-img-top" alt="Mocha">
+          <div class="card-body text-center">
+            <h5 class="card-title">Mocha</h5>
+            <p class="card-text">Purple yam Godness in a Cup.</p>
+          <select class="form-select mb-2" id="mocha-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Mocha','mocha-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape3.jpg" class="card-img-top" alt="Spanish Latte">
+          <div class="card-body text-center">
+            <h5 class="card-title">Spanish Latte</h5>
+            <p class="card-text">Pink Drink</p>
+            <select class="form-select mb-2" id="spanish-latte-ounce">
+                  <option value="16oz-119">Medium - ₱119</option>
+                  <option value="22oz-139">Large - ₱139</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Spanish Latte','spanish-latte-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape8.jpg" class="card-img-top" alt="Matcha Expresso">
+          <div class="card-body text-center">
+            <h5 class="card-title">Matcha Expresso</h5>
+            <p class="card-text">Creamy and bold.</p>
+            <select class="form-select mb-2" id="matcha-expresso-ounce">
+                  <option value="16oz-139">Medium - ₱139</option>
+                  <option value="22oz-159">Large - ₱159</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Matcha Expresso','matcha-expresso-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape4.jpg.jpg" class="card-img-top" alt="White Mocha">
+          <div class="card-body text-center">
+            <h5 class="card-title">White Mocha</h5>
+            <p class="card-text">Creamy and bold with a Pumpkin Spice finish.</p>
+            <select class="form-select mb-2" id="white-mocha-ounce">
+                  <option value="16oz-129">Medium - ₱129</option>
+                  <option value="22oz-149">Large - ₱149</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('White Mocha','white-mocha-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape4.jpg.jpg" class="card-img-top" alt="Trademark">
+          <div class="card-body text-center">
+            <h5 class="card-title">Trademark</h5>
+            <p class="card-text">Creamy and bold with a Pumpkin Spice finish.</p>
+            <select class="form-select mb-2" id="trademark-ounce">
+                  <option value="16oz-149">Medium - ₱149</option>
+                  <option value="22oz-169">Large - ₱169</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Trademark','trademark-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape4.jpg.jpg" class="card-img-top" alt="Signature Latte">
+          <div class="card-body text-center">
+            <h5 class="card-title">Signature Latte</h5>
+            <p class="card-text">Creamy and bold with a Pumpkin Spice finish.</p>
+            <select class="form-select mb-2" id="signature-latte-ounce">
+                  <option value="16oz-149">Medium - ₱149</option>
+                  <option value="22oz-169">Large - ₱169</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Signature Latte','signature-latte-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>         
+    </div>
+</div>
+
+<div class="container my-5" data-category="creations">
+  <h2 style="color: #f4f2f2; text-align: center;">Creations</h2>
+    <h2 class="text-center mb-4"></h2>
+    <div class="row g-4">
+      <div class="col-6 col-sm-4 col-md-3">
+          <div class="card">
+            <img src="kape1.jpg" class="card-img-top" alt="Cookie Monster">
+              <div class="card-body text-center">
+              <h5 class="card-title">Cookie Monster</h5>
+            <p class="card-text">Rich and creamy favorite.</p>
+                <select class="form-select mb-2" id="cookie-monster-ounce">
+                  <option value="16oz-159">Medium - ₱159</option>
+                  <option value="22oz-179">Large - ₱179</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Cookie Monster','cookie-monster-ounce')">Add to Cart</button>
+              </div>
+          </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape2.jpg" class="card-img-top" alt="Very Berries">
+          <div class="card-body text-center">
+            <h5 class="card-title">Very Berries</h5>
+            <p class="card-text">Purple yam Godness in a Cup.</p>
+          <select class="form-select mb-2" id="very-berries-ounce">
+                  <option value="16oz-149">Medium - ₱149</option>
+                  <option value="22oz-169">Large - ₱169</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Very Berries','very-berries-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape3.jpg" class="card-img-top" alt="Rock and Cherry">
+          <div class="card-body text-center">
+            <h5 class="card-title">Rock and Cherry</h5>
+            <p class="card-text">Pink Drink</p>
+            <select class="form-select mb-2" id="rock-cherry-ounce">
+                  <option value="16oz-139">Medium - ₱139</option>
+                  <option value="22oz-159">Large - ₱159</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Rock and Cherry','rock-cherry-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape8.jpg" class="card-img-top" alt="Pink Velvet">
+          <div class="card-body text-center">
+            <h5 class="card-title">Pink Velvet</h5>
+            <p class="card-text">Creamy and bold.</p>
+            <select class="form-select mb-2" id="pink-velvet-ounce">
+                  <option value="16oz-139">Medium - ₱139</option>
+                  <option value="22oz-159">Large - ₱159</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Pink Velvet','pink-velvet-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape4.jpg.jpg" class="card-img-top" alt="Strawberries and Cream">
+          <div class="card-body text-center">
+            <h5 class="card-title">Strawberries and Cream</h5>
+            <p class="card-text">Creamy and bold with a Pumpkin Spice finish.</p>
+            <select class="form-select mb-2" id="strawberries-cream-ounce">
+                  <option value="16oz-149">Medium - ₱149</option>
+                  <option value="22oz-169">Large - ₱169</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Strawberries and Cream','strawberries-cream-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape4.jpg.jpg" class="card-img-top" alt="Matcha Madness">
+          <div class="card-body text-center">
+            <h5 class="card-title">Matcha Madness</h5>
+            <p class="card-text">Creamy and bold with a Pumpkin Spice finish.</p>
+            <select class="form-select mb-2" id="matcha-madness-ounce">
+                  <option value="16oz-149">Medium - ₱149</option>
+                  <option value="22oz-169">Large - ₱169</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Matcha Madness','matcha-madness-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape4.jpg.jpg" class="card-img-top" alt="Summer Green Drink">
+          <div class="card-body text-center">
+            <h5 class="card-title">Summer Green Drink</h5>
+            <p class="card-text">Creamy and bold with a Pumpkin Spice finish.</p>
+            <select class="form-select mb-2" id="summer-green-drink-ounce">
+                  <option value="16oz-139">Medium - ₱139</option>
+                  <option value="22oz-159">Large - ₱159</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Summer Green Drink','summer-green-drink-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+          <img src="kape4.jpg.jpg" class="card-img-top" alt="Summer Pink Drink">
+          <div class="card-body text-center">
+            <h5 class="card-title">Summer Pink Drink</h5>
+            <p class="card-text">Creamy and bold with a Pumpkin Spice finish.</p>
+            <select class="form-select mb-2" id="summer-pink-drink-ounce">
+                  <option value="16oz-149">Medium - ₱149</option>
+                  <option value="22oz-169">Large - ₱169</option>
+                </select>
+
+            <button class="btn btn-dark" onclick="addToCart('Summer Pink Drink','summer-pink-drink-ounce')">Add to Cart</button>
+          </div>
+        </div>
+      </div>         
+    </div>
+</div>
+
+<!--Your Cart-->
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 floating-cart">
+      <div class="card shadow text-center" style="background-color: #3e2723; color: white;">
+        <div class="card-header bg-dark text-white">
+          <h5 class="mb-0">🛒 Your Cart</h5>
+        </div>
+        <div class="card-body">
+          <ul id="cart-list" class="list-group mb-3">
+            <!-- Cart items will appear here -->
+          </ul>
+          <p id="total-price" class="fw-bold">Total: ₱0.00</p>
+          <div class="d-flex justify-content-center gap-2">
+            <button class="btn btn-success" onclick="submitOrder()">Submit Order</button>
+            <button class="btn btn-danger" onclick="clearCart()">Clear Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="dineInForm" class="container my-4 d-none">
+  <div class="card shadow">
+    <div class="card-header bg-dark text-white">
+      <h5 class="mb-0">📝 Dine-In Order Form</h5>
+    </div>
+    <div class="card-body">
+      <form onsubmit="return finalizeOrder(event)">
+        <div class="mb-3">
+          <label for="customerName" class="form-label">Your Name</label>
+          <input type="text" class="form-control" id="customerName" required>
+        </div>
+        <div class="mb-3">
+          <label for="orderNotes" class="form-label">Special Notes</label>
+          <textarea class="form-control" id="orderNotes" rows="3" placeholder="(Optional) Any request for your order?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Place Order</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- Bootstrap JS (Required) -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript Form & Toast Logic -->
+<script>
+  const cart = [];
+
+  function addToCart(drinkName, selectId) {
+    const select = document.getElementById(selectId);
+    const selected = select.value;
+    const [oz, price] = selected.split('-');
+    const existingItem = cart.find(item => item.name === drinkName && item.size === oz);
+
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({ name: drinkName, size: oz, price: parseFloat(price), quantity: 1 });
+    }
+
+    updateCartDisplay();
+  }
+
+  function updateCartDisplay() {
+    const cartList = document.getElementById('cart-list');
+    const totalPriceDisplay = document.getElementById('total-price');
+    cartList.innerHTML = '';
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      const itemTotal = item.price * item.quantity;
+      total += itemTotal;
+
+      const li = document.createElement('li');
+      li.className = 'list-group-item d-flex justify-content-between align-items-center flex-wrap';
+
+      li.innerHTML = `
+        <div class="me-auto">
+          ${item.name} (${item.size}) - ₱${item.price.toFixed(2)} x 
+          <input type="number" min="1" value="${item.quantity}" onchange="updateQuantity(${index}, this.value)" style="width: 60px; text-align:center;">
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <strong>₱${itemTotal.toFixed(2)}</strong>
+          <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">✕</button>
+        </div>
+      `;
+
+      cartList.appendChild(li);
+    });
+
+    totalPriceDisplay.textContent = `Total: ₱${total.toFixed(2)}`;
+  }
+
+  function updateQuantity(index, newQty) {
+    const qty = parseInt(newQty);
+    cart[index].quantity = qty > 0 ? qty : 1;
+    updateCartDisplay();
+  }
+
+  function clearCart() {
+    cart.length = 0;
+    updateCartDisplay();
+    alert("Cart cleared.");
+  }
+
+  function submitOrder() {
+    if (cart.length === 0) {
+      alert("Your cart is empty.");
+      return;
+    }
+
+    // Show the dine-in form
+    document.getElementById('dineInForm').classList.remove('d-none');
+    window.scrollTo({ top: document.getElementById('dineInForm').offsetTop, behavior: 'smooth' });
+  }
+
+  function finalizeOrder(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('customerName').value.trim();
+    const notes = document.getElementById('orderNotes').value.trim();
+
+    if (!name || cart.length === 0) {
+      alert("Please fill out your name and add at least one item.");
+      return;
+    }
+
+    fetch('submit_order.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, notes, items: cart })
+    })
+    .then(response => response.json())
+    .then(result => {
+      if (result.success) {
+        alert(result.message);
+        clearCart();
+        document.getElementById('dineInForm').classList.add('d-none');
+      } else {
+        alert("Error: " + result.message);
+      }
+    })
+    .catch(error => {
+      alert("An error occurred: " + error);
+    });
+  }
+
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCartDisplay();
+  }
+
+  // Category filtering
+  const buttons = document.querySelectorAll('.nav-btn');
+  const sections = document.querySelectorAll('.container[data-category]');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.getAttribute('data-category');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      sections.forEach(section => {
+        section.style.display = (category === 'all' || section.getAttribute('data-category') === category) ? 'block' : 'none';
+      });
+    });
+  });
+
+  // Auto-collapse mobile nav
+  document.querySelectorAll('.navbar-nav a').forEach(link => {
+    link.addEventListener('click', function () {
+      const navbar = document.querySelector('.navbar-collapse');
+      if (navbar.classList.contains('show')) {
+        new bootstrap.Collapse(navbar).toggle();
+      }
+    });
+  });
+</script>
+
+
+<footer class="footer-small mt-5">
+  <div class="container py-3">
+    <div class="row">
+      <!-- Contact -->
+      <div class="col-md-6">
+        <h5 class="text-white">Contact Us</h5>
+        <ul class="list-unstyled small text-light">
+          <li><strong>FB:</strong> <a href="https://www.facebook.com/share/1aMxS4UEM2/" target="_blank">@WeekendCupfeph</a></li>
+          <li><strong>Tiktok:</strong> <a href="https://www.tiktok.com/@weekendcupfeph" target="_blank">@weekendcupfeph</a></li>
+          <li><strong>IG:</strong> <a href="https://www.instagram.com/weekendcupfe.ph" target="_blank">@weekendcupfe.ph</a></li>
+          <li><strong>Email:</strong> weekendscupfe.ph@gmail.com</li>
+          <li><strong>Phone:</strong> 0915 053 3429</li>
+          <li><strong>Address:</strong> 512 P. Burgos St, Rosario</li>
+        </ul>
+      </div>
+
+      <!-- About -->
+      <div class="col-md-6">
+        <h5 class="text-white">About WKND</h5>
+        <p class="small text-light mb-0">
+          WKND is your cozy coffee spot for quality, calm, and community. Dine-in only. Great coffee, good vibes.
+        </p>
+      </div>
+    </div>
+
+    <hr class="border-light my-2">
+    <p class="text-center text-light small mb-0">© 2025 Weekend Cupfe. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

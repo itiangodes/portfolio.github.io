@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>John Vergel De Vega| Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <button onclick="toggleDarkMode()" id="modeToggle" class="settings-btn" title="Toggle Dark Mode">
+  💡
+</button>
+</head>
+<body>
+  <header>
+    <h1>John Vergel De Vega</h1>
+    <p>Back-End Developer</p>
+  </header>
+
+  <div class="profile-pic">
+  <img src="vergel.jpg" alt="vergel">
+  </div>
+
+  <section class="about">
+    <h2>About Me</h2>
+     <p>With a strong passion for logic and databases, I focus on creating robust server-side solutions. I have experience with PHP, MySQL, and secure authentication systems.</p>
+  </section>
+
+  <section class="portfolio">
+    <h2>Recent Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Course Management API</h3>
+        <p>Built a REST API for managing university courses and users using PHP and JWT.</p>
+      </div>
+      <div class="project-card">
+        <h3>Visitor Logbook System</h3>
+        <p>Designed a secure logbook system with encryption and login attempt monitoring.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects">
+  <h2>My Personal Projects</h2>
+  <div class="project-grid">
+    <!-- Project 1 -->
+    <div class="project-card">
+      <img src="github.jpg" alt="Project 1 Screenshot" />
+      <h3>Personal Porfolio Website</h3>
+      <p>A simple personal porfolio website where I use html, css, and javascript.</p>
+      <a href="https://github.com/itiangodes/itiangodes.github.io.git" class="btn" target="_blank">GitHub Repo</a>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <img src="github.jpg" alt="Project 2 Screenshot" />
+      <h3>WKND Coffee Shop</h3>
+      <p>WKND is your cozy coffee spot for quality, calm, and community. Dine-in only. Great coffee, good vibes.</p>
+      <a href="https://github.com/itiangodes/wknd.github.io.git" class="btn" target="_blank">GitHub Repo</a>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <img src="github.jpg" alt="Project 3 Screenshot" />
+      <h3>Python</h3>
+      <p>A simple created code of python where it can count the number of coins in a specific value.</p>
+      <a href="https://github.com/itiangodes/Python.git" class="btn" target="_blank">GitHub Repo</a>
+    </div>
+  </div>
+</section>
+
+  <section class="github-activity">
+    <h2>GitHub Activity</h2>
+      <div id="repo-list" class="repo-grid">
+        <!-- Repositories will load here -->
+    </div>
+  </section>
+
+  <section class="contact">
+  <h2>Contact</h2>
+
+  <div class="contact-item">
+    <span class="contact-label">📧 Email:</span>
+    <a href="N.Vergel.027@gmail.com">N.Vergel.027@gmail.com</a>
+  </div>
+
+  <div class="contact-item">
+    <span class="contact-label">📘 Facebook:</span>
+    <a href="https://www.facebook.com/VergelJohn27" target="_blank">Vergel John</a>
+  </div>
+
+  <div class="contact-item">
+    <span class="contact-label">📷 Instagram:</span>
+    <a href="https://www.instagram.com/vergeljohn27/" target="_blank">@vergeljohn27</a>
+  </div>
+
+  <a href="index.html" class="btn">← Back to Home</a>
+</section>
+
+
+  <footer>
+    <p>© 2025 John Vergel De Vega</p>
+  </footer>
+</body>
+<script>
+  // Check saved mode when the page loads
+  window.onload = function () {
+    const isDarkMode = localStorage.getItem("darkMode");
+    const body = document.body;
+    const btn = document.getElementById("modeToggle");
+
+    if (isDarkMode === "enabled") {
+      body.classList.add("dark");
+      btn.textContent = "💤"; // bulb off
+      btn.title = "Dark Mode (Click to switch to Light)";
+    } else {
+      body.classList.remove("dark");
+      btn.textContent = "💡"; // bulb on
+      btn.title = "Light Mode (Click to switch to Dark)";
+    }
+  };
+
+  function toggleDarkMode() {
+    const body = document.body;
+    const btn = document.getElementById("modeToggle");
+
+    if (body.classList.contains("dark")) {
+      body.classList.remove("dark");
+      localStorage.setItem("darkMode", "disabled");
+      btn.textContent = "💡";
+      btn.title = "Light Mode (Click to switch to Dark)";
+    } else {
+      body.classList.add("dark");
+      localStorage.setItem("darkMode", "enabled");
+      btn.textContent = "💤";
+      btn.title = "Dark Mode (Click to switch to Light)";
+    }
+  }
+  async function fetchGitHubRepos() {
+    const username = "V3rg3l";
+    const apiUrl = `https://api.github.com/users/${username}/repos?sort=updated&per_page=5`;
+    const repoList = document.getElementById("repo-list");
+
+    try {
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+
+      data.forEach(repo => {
+        const card = document.createElement("div");
+        card.classList.add("repo-card");
+        card.innerHTML = `
+          <h3>${repo.name}</h3>
+          <p>${repo.description || "No description provided."}</p>
+          <a href="${repo.html_url}" target="_blank">View Repository</a>
+          <p><small>🕒 Updated: ${new Date(repo.updated_at).toLocaleDateString()}</small></p>
+        `;
+        repoList.appendChild(card);
+      });
+    } catch (error) {
+      repoList.innerHTML = "<p>Failed to load GitHub repositories.</p>";
+      console.error("GitHub API Error:", error);
+    }
+  }
+
+  fetchGitHubRepos();
+</script>
+
+</html>

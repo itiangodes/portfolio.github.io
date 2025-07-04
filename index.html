@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <button onclick="toggleDarkMode()" id="modeToggle" class="settings-btn" title="Toggle Dark Mode">
+  💡
+</button>
+</head>
+<body>
+  <header>
+    <H1><B>HOMIES PORTFOLIOS</B></H1>
+    <h1>Meet Our Team</h1>
+    <p>Explore the portfolios of our talented members</p>
+  </header>
+
+  <section class="team" >
+    <div class="member-card" data-github="Horus0023">
+        <img src="rayver1.jpg" alt="GitHub Avatar" />
+        <h2 id="name-Horus0023">Rayver M. Legazpi</h2>
+
+      <div class="github-info">
+        <div class="stat">
+          <span class="icon">📁</span>
+          <span class="number repos">–</span>
+          <span class="label">Repos</span>
+        </div>
+      <div class="stat">
+        <span class="icon">👥</span>
+        <span class="number followers">–</span>
+        <span class="label">Followers</span>
+      </div>
+      <div class="stat">
+      <span class="icon">➕</span>
+      <span class="number following">–</span>
+      <span class="label">Following</span>
+      </div>
+    </div>
+
+  <p>UI/UX Designer</p>
+  <a href="rayver.html" class="btn">View Profile</a>
+  <a href="\Rayver\index.html" class="btn" target="_blank">View Portfolio</a>
+  <a href="https://github.com/Horus0023" class="btn" target="_blank">View Github</a>
+</div>
+    
+    <div class="member-card" data-github="itiangodes">
+      <img src="christian.jpg" alt="GitHub Avatar" />
+      <h2 id="name-itiangodes">Christian Jeed C. Godes</h2>
+
+        <div class="github-info">
+          <div class="stat">
+            <span class="icon">📁</span>
+            <span class="number repos">–</span>
+            <span class="label">Repos</span>
+          </div>
+          <div class="stat">
+            <span class="icon">👥</span>
+            <span class="number followers">–</span>
+            <span class="label">Followers</span>
+          </div>
+          <div class="stat">
+            <span class="icon">➕</span>
+            <span class="number following">–</span>
+            <span class="label">Following</span>
+          </div>
+        </div>
+
+      <p>Front-End Developer</p>
+      <a href="christian.html" class="btn">View Profile</a>
+      <a href="\christian\index.html" class="btn" target="_blank">View Portfolio </a>
+      <a href="https://github.com/itiangodes" class="btn" target="_blank">View Github</a>
+    </div>
+    
+    <div class="member-card" data-github="GoldeJobert">
+      <img src="jobert.jpg" alt="Member 3" />
+      <h2>JOBERT C. GOLDE</h2>
+
+        <div class="github-info">
+          <div class="stat">
+            <span class="icon">📁</span>
+            <span class="number repos">–</span>
+            <span class="label">Repos</span>
+          </div>
+          <div class="stat">
+            <span class="icon">👥</span>
+            <span class="number followers">–</span>
+            <span class="label">Followers</span>
+          </div>
+          <div class="stat">
+            <span class="icon">➕</span>
+            <span class="number following">–</span>
+            <span class="label">Following</span>
+          </div>
+        </div>
+
+      <p>Project Manager</p>
+      <a href="jobert.html" class="btn">View Profile</a>
+      <a href="\Jobert\index.html" class="btn" target="_blank">View Portfolio</a>
+      <a href="https://github.com/GoldeJobert" class="btn" target="_blank">View Github</a>
+    </div>
+    
+    <div class="member-card" data-github="V3rg3l">
+      <img src="vergel.jpg" alt="Member 4" />
+      <h2>Vergel John M. De Vega</h2>
+
+        <div class="github-info">
+          <div class="stat">
+            <span class="icon">📁</span>
+            <span class="number repos">–</span>
+            <span class="label">Repos</span>
+          </div>
+          <div class="stat">
+            <span class="icon">👥</span>
+            <span class="number followers">–</span>
+            <span class="label">Followers</span>
+          </div>
+          <div class="stat">
+            <span class="icon">➕</span>
+            <span class="number following">–</span>
+            <span class="label">Following</span>
+          </div>
+        </div>
+
+      <p>Back-End Developer</p>
+      <a href="vergel.html" class="btn">View Profile</a>
+      <a href="\Github Portfolio\index.html" class="btn" target="_blank">View Portfolio</a>
+      <a href="https://github.com/V3rg3l" class="btn" target="_blank">View Github</a>
+    </div>
+  </section>
+
+  <section class="group-projects">
+  <h2>Our Group Project</h2>
+  
+  <div class="project-container">
+    <div class="slideshow">
+      <img src="3.jpg" class="slide active" alt="Project Screenshot 1">
+      <img src="1.jpg" class="slide" alt="Project Screenshot 2">
+      <img src="2.jpg" class="slide" alt="Project Screenshot 3">
+      <img src="4.jpg" class="slide" alt="Project Screenshot 4">
+    </div>
+
+    <div class="project-info">
+      <h3>WKND Coffee Shop</h3>
+      <p>WKND is your cozy coffee spot for quality, calm, and community. Dine-in only. Great coffee, good vibes.</p>
+      <a href="\WKND\index.html" class="btn" target="_blank">View Project</a>
+    </div>
+  </div>
+</section>
+
+
+  <footer>
+    <p>© 2025 BSINFOTECH-302A TEAM PORTFOLIOS. All rights reserved.</p>
+  </footer>
+</body>
+<script>
+  // Check saved mode when the page loads
+  window.onload = function () {
+    const isDarkMode = localStorage.getItem("darkMode");
+    const body = document.body;
+    const btn = document.getElementById("modeToggle");
+
+    if (isDarkMode === "enabled") {
+      body.classList.add("dark");
+      btn.textContent = "💤"; // bulb off
+      btn.title = "Dark Mode (Click to switch to Light)";
+    } else {
+      body.classList.remove("dark");
+      btn.textContent = "💡"; // bulb on
+      btn.title = "Light Mode (Click to switch to Dark)";
+    }
+  };
+
+  function toggleDarkMode() {
+    const body = document.body;
+    const btn = document.getElementById("modeToggle");
+
+    if (body.classList.contains("dark")) {
+      body.classList.remove("dark");
+      localStorage.setItem("darkMode", "disabled");
+      btn.textContent = "💡";
+      btn.title = "Light Mode (Click to switch to Dark)";
+    } else {
+      body.classList.add("dark");
+      localStorage.setItem("darkMode", "enabled");
+      btn.textContent = "💤";
+      btn.title = "Dark Mode (Click to switch to Light)";
+    }
+  }
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function showNextSlide() {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
+  }
+
+  setInterval(showNextSlide, 3000);
+
+   async function loadGitHubStats() {
+    const cards = document.querySelectorAll('.member-card[data-github]');
+    for (const card of cards) {
+      const username = card.getAttribute('data-github');
+      try {
+        const res = await fetch(`https://api.github.com/users/${username}`);
+        if (!res.ok) throw new Error('GitHub API error');
+        const data = await res.json();
+        card.querySelector('.followers').textContent = data.followers;
+        card.querySelector('.repos').textContent = data.public_repos;
+        card.querySelector('.following').textContent = data.following;
+      } catch (err) {
+        console.error(`Failed to load GitHub data for ${username}:`, err);
+        card.querySelector('.followers').textContent = 'N/A';
+        card.querySelector('.repos').textContent = 'N/A';
+        card.querySelector('.following').textContent = 'N/A';
+      }
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', loadGitHubStats);
+</script>
+
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="color-1.css" id="theme-style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        .theme-switch-wrapper {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 999;
+        }
+
+        .theme-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .theme-switch input {
+            height: 0;
+            width: 0;
+            visibility: hidden;
+        }
+
+        .slider {
+            width: 50px;
+            height: 25px;
+            background-color: #ccc;
+            border-radius: 50px;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+
+        .slider::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 21px;
+            height: 21px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        input:checked + .slider {
+            background-color: var(--skin-color);
+        }
+
+        input:checked + .slider::before {
+            transform: translateX(25px);
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch">
+            <input type="checkbox" id="toggle-switch" onchange="toggleTheme()">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="main-container">
+        <div class="aside">
+            <div class="logo">
+                <a href="#"><span></span>Itian</a>
+            </div>
+            <div class="nav-toggler">
+                <span></span>
+            </div>
+            <ul class="nav">
+                <li><a href="#home" class="active"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="#about"><i class="fa fa-user"></i>About</a></li>
+                <li><a href="#educ"><i class="fa fa-book"></i>Educational Background</a></li>
+                <li><a href="#projects"><i class="fa fa-briefcase"></i>Projects</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <section class="home section" id="home">
+                <div class="container">
+                    <div class="row">
+                        <div class="home-info padd-15">
+                            <h1 class="hello"><span class="name">My Portfolio</span></h1>
+                            <h3 class="my-profession">I'm a <span class="typing">Information Technology Student</span></h3>
+                            <p>I'm a 3rd Year College student taking Bachelor in Science and Information Technology in Cavite State University CCAT Campus</p>
+                            <a href="#about" class="btn about me">More About Me</a>
+                        </div>
+                        <div class="home-img padd-15">
+                            <img src="home.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="about section" id="about">
+                <div class="container">
+                    <div class="section-title padd-15">
+                        <h2>About Me</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="about-content padd-15">
+                        <div class="row">
+                            <div class="about-text padd-15">
+                                <h3>I'm Christian Jeed C. Godes from <span>BSINFOTECH 302A</span></h3>
+                                <p>As a 3rd-year IT student at Cavite State University CCAT Campus, I have a deep appreciation for technology, particularly Linux and multimedia systems. Beyond academics, music plays a significant role in my life—I enjoy playing the piano and bass guitar. Reading books, watching anime like Haikyuu!!, and immersing myself in video games are some of my favorite pastimes. Spending time in Guimbal, Iloilo, where nature and family surround me, brings a sense of peace and belonging. My faith keeps me grounded, with Jeremiah 29:11 serving as a constant reminder that God's plans are greater than my own. I also hold onto the wisdom that “We were never designed to be everything to everyone,” a quote that helps me embrace my own journey. As an ambivert, I balance solitude and connection, always eager to learn, create, and explore new possibilities.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="personal-info padd-15">
+                                <div class="row">
+                                    <div class="info-item padd-15">
+                                        <p>Gender: <span>Male</span></p>
+                                    </div>
+                                    <div class="info-item padd-15">
+                                        <p>Birthday: <span>March 27, 2002</span></p>
+                                    </div>
+                                    <div class="info-item padd-15">
+                                        <p>Age: <span>23 years old</span></p>
+                                    </div>
+                                    <div class="info-item padd-15">
+                                        <p>Blood Type: <span>A+</span></p>
+                                    </div>
+                                    <div class="info-item padd-15">
+                                        <p>Religion: <span>Christian</span></p>
+                                    </div>
+                                    <div class="info-item padd-15">
+                                        <p>Phone: <span>09923214384</span></p>
+                                    </div>
+                                    <div class="info-item padd-15">
+                                        <p>Email: <span>christiangodes27@gmail.com</span></p>
+                                    </div>
+                                    <div class="info-item padd-15">
+                                        <p>Address: <span>Wellington Residence Tres Cruses, Tanza, Cavite</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills padd-15">
+                                <div class="skills-item padd-15">
+                                    <h5>CSS</h5>
+                                </div>
+                                <div class="skills-item padd-15">
+                                    <h5>Java</h5>
+                                </div>
+                                <div class="skills-item padd-15">
+                                    <h5>C++</h5>
+                                </div>
+                                <div class="skills-item padd-15">
+                                    <h5>HTML</h5>
+                                </div>
+                                <div class="skills-item padd-15">
+                                    <h5>Javascript</h5>
+                                </div>
+                                <div class="skills-item padd-15">
+                                    <h5>Python</h5>
+                                </div>
+                                <div class="skills-item padd-15">
+                                    <h5>XML</h5>
+                                </div>
+                                <div class="skills-item padd-15">
+                                    <h5>PHP</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="educ section" id="educ">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>Eductional Background</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="educ-content padd-15">
+                        <div class="row">
+                            <div class="education padd-15">
+                                <h3 class="title">Educational Background</h3>
+                                <div class="row">
+                                    <div class="timeline-box padd-15">
+                                        <div class="timeline shadow-dark">
+                                            <div class="timeline-item">
+                                                <div class="circle-dot"></div>
+                                                <h3 class="timeline-date">
+                                                    <i class="fa fa-calendar"></i> 2011 - 2015
+                                                </h3>
+                                                <h4 class="timeline-title">Elementary</h4>
+                                                <p class="timeline-text">Bienvinido R. Fojas Memorial Elementary School</p>
+                                            </div>
+                                            <div class="timeline-item">
+                                                <div class="circle-dot"></div>
+                                                <h3 class="timeline-date">
+                                                    <i class="fa fa-calendar"></i> 2015 - 2019
+                                                </h3>
+                                                <h4 class="timeline-title">Junior High School</h4>
+                                                <p class="timeline-text">Amaya School of Home Industries</p>
+                                            </div>
+                                            <div class="timeline-item">
+                                                <div class="circle-dot"></div>
+                                                <h3 class="timeline-date">
+                                                    <i class="fa fa-calendar"></i> 2019 - 2021
+                                                </h3>
+                                                <h4 class="timeline-title">Senior High School</h4>
+                                                <p class="timeline-text">Amaya School of Home Industries</p>
+                                            </div>
+                                            <div class="timeline-item">
+                                                <div class="circle-dot"></div>
+                                                <h3 class="timeline-date">
+                                                    <i class="fa fa-calendar"></i> 2022 - Present
+                                                </h3>
+                                                <h4 class="timeline-title">College</h4>
+                                                <p class="timeline-text">Cavite State University CCAT Campus</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="education padd-15">
+                                <h3 class="title">Awards</h3>
+                                <div class="row">
+                                    <div class="timeline-box padd-15">
+                                        <div class="timeline shadow-dark">
+                                            <div class="timeline-item">
+                                                <div class="circle-dot"></div>
+                                                <h3 class="timeline-date">
+                                                    <i class="fa fa-calendar"></i> 2019 - 2020
+                                                </h3>
+                                                <h4 class="timeline-title">Senior High School</h4>
+                                                <p class="timeline-text">With Honors</p>
+                                            </div>
+                                            <div class="timeline-item">
+                                                <div class="circle-dot"></div>
+                                                <h3 class="timeline-date">
+                                                    <i class="fa fa-calendar"></i> 2020 - 2021
+                                                </h3>
+                                                <h4 class="timeline-title">Senior High School</h4>
+                                                <p class="timeline-text">With Honors</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="projects section" id="projects">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>Projects</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="project-heading padd-15">
+                            <h2>My Projects: </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="projects-item padd-15">
+                            <div class="projects-item-inner shadow-dark">
+                                <div class="projects-img">
+                                    <img src="Html.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="projects-item padd-15">
+                            <div class="projects-item-inner shadow-dark">
+                                <div class="projects-img">
+                                    <img src="Java.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="projects-item padd-15">
+                            <div class="projects-item-inner shadow-dark">
+                                <div class="projects-img">
+                                    <img src="Login.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="projects-item padd-15">
+                            <div class="projects-item-inner shadow-dark">
+                                <div class="projects-img">
+                                    <img src="Python.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        function toggleTheme() {
+            const link = document.getElementById('theme-style');
+            if (link.getAttribute('href') === 'color-1.css') {
+                link.setAttribute('href', 'color-dark.css');
+            } else {
+                link.setAttribute('href', 'color-1.css');
+            }
+        }
+
+        // Typed.js
+        var typed = new Typed(".typing", {
+            strings: ["Information Technology Student", "Web Developer", "Gamer", "Linux Enthusiast"],
+            typeSpeed: 60,
+            backSpeed: 40,
+            loop: true
+        });
+
+        // ScrollReveal
+        ScrollReveal().reveal('.section-title', { delay: 200, origin: 'left', distance: '50px' });
+        ScrollReveal().reveal('.about-text', { delay: 300, origin: 'bottom', distance: '30px' });
+        ScrollReveal().reveal('.projects-item', { interval: 200, origin: 'bottom', distance: '20px' });
+
+        // Progress animation
+        const bars = document.querySelectorAll('.progress');
+        window.addEventListener('scroll', () => {
+            bars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    bar.style.width = bar.getAttribute('style').split(':')[1];
+                }
+            });
+        });
+    </script>
+</body>
+</html>
